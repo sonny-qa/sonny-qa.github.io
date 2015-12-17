@@ -1,38 +1,26 @@
+# Dependencies
+markdown:         redcarpet
+highlighter:      pygments
+
 # Permalinks
-#
-# Use of `relative_permalinks` ensures post links from the index work properly.
-permalink:           pretty
+permalink:        pretty
 
 
 # Setup
-title:               Sonny
-tagline:             creative engineering
-url:                 http://getpoole.com
-paginate:            1
-baseurl:             ""
+title:            Sonny
+tagline:          'A Jekyll theme'
+description:      'Software & Chemical engineering'
+baseurl:          /
 
-# Assets
-#
-# We specify the directory for Jekyll so we can use @imports.
-sass:
-  sass_dir:          _sass
-  style:            :compressed
-
-# About/contact
 author:
-  name:              Mark Otto
-  url:               https://twitter.com/mdo
-  email:             markdotto@gmail.com
+  name:           'Mark Otto'
+  url:            https://twitter.com/mdo
+
+paginate:         5
 
 # Custom vars
-version:             2.0.0
+version:          2.1.0
+
 github:
-  repo:              https://github.com/poole/poole
+  repo:           https://github.com/poole/hyde
 
-
-paginate: 5
-paginate_path: "page:num"
-
-gems:
-  - jekyll-gist
-  - jekyll-paginate

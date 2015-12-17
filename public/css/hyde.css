@@ -59,13 +59,13 @@ html {
   color: rgba(255,255,255,.5);
   background-color: #202020;
 }
-@media (min-width: 48em) {
+@media (min-width: 38em) {
   .sidebar {
     position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
-    width: 13rem;
+    width: 15rem;
     text-align: left;
   }
 }
@@ -79,7 +79,7 @@ html {
 .sidebar-about h1 {
   color: #fff;
   margin-top: 0;
-  font-family: "Exo 2", sans-serif;
+  font-family: "Abril Fatface", serif;
   font-size: 3.25rem;
 }
 
@@ -134,7 +134,7 @@ a.sidebar-nav-item:focus {
   }
 }
 
-@media (min-width: 64em) {
+@media (min-width: 60em) {
   .content {
     margin-left: 22rem;
     margin-right: 4rem;
