@@ -8,8 +8,8 @@ permalink:        pretty
 
 # Setup
 title:            Sonny
-tagline:          'A Jekyll theme'
-description:      'Software & Chemical engineering'
+tagline:          'Creative Engineering'
+description:      'Petroleum & Software engineering'
 baseurl:          /
 
 author:
@@ -22,5 +22,5 @@ paginate:         5
 version:          2.1.0
 
 github:
-  repo:           https://github.com/poole/hyde
+  repo:           https://github.com/sonny-qa
 
