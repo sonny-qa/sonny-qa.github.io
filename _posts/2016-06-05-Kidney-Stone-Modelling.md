@@ -32,5 +32,6 @@ comments: true
     })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script id="dsq-count-scr" src="//sonny-qa.disqus.com/count.js" async></script>
 
 {% endif %}
