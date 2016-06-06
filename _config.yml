@@ -10,11 +10,11 @@ permalink:        pretty
 title:            Sonny
 tagline:          'Creative Engineering'
 description:      'Petroleum & Software engineering'
-baseurl:          /
+baseurl:          ""
 
 author:
   name:           'Mark Otto'
-  url:            https://twitter.com/mdo
+
 
 paginate:         5
 
