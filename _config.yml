@@ -10,7 +10,8 @@ permalink:        pretty
 title:            Sonny
 tagline:          'Creative Engineering'
 description:      'Petroleum & Software engineering'
-baseurl:          ""
+baseurl:          "/"
+url: 			  "http://sonny-qa.github.io"
 
 author:
   name:           'Mark Otto'
