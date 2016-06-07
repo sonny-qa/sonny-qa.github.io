@@ -12,6 +12,7 @@ tagline:          'Creative Engineering'
 description:      'Petroleum & Software engineering'
 baseurl:          "/"
 url: 			  "http://sonny-qa.github.io"
+disqus: 		  "sonny-qa"
 
 author:
   name:           'Mark Otto'
