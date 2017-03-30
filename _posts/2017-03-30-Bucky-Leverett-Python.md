@@ -9,7 +9,7 @@ $$ \LaTeX $$
 
 test code
 
-`​``py
-import numpy as np
-x = [d*2 for i in list]
+`​``python
+import numpy as np;
+x = [d*2 for i in list];
 `​``
