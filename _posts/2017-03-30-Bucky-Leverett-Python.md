@@ -9,6 +9,6 @@ $$ \LaTeX $$
 
 test code
 
-```js
-var s = 'Hi';
+```py
+import numpy as np;
 ```
