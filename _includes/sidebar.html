@@ -20,7 +20,7 @@
       {% comment %}
         The code below dynamically generates a sidebar nav of pages with
         `layout: page` in the front-matter. See readme for usage.
-      {% endcomment %}
+      
 
       {% assign pages_list = site.pages %}
       {% for node in pages_list %}
@@ -30,7 +30,15 @@
           {% endif %}
         {% endif %}
       {% endfor %}
+      {% endcomment %}
 
+      <ul>
+      {% for post in site.posts %}
+        <li>
+          <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ post.title }}</a>
+        </li>
+      {% endfor %}
+      </ul>
       
       
     </nav>
