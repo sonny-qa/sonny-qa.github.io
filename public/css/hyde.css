@@ -75,8 +75,8 @@ html {
   color: #fff;
 }
 
-.sidebar-name {
-  font-size: 2.3rem;
+.sidebar-name a {
+  font-size: 2.2rem;
 }
 
 /* About section */
