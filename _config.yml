@@ -1,6 +1,7 @@
 # Dependencies
 markdown:         kramdown
 highlighter:      rouge
+syntax_highlighter: rouge
 
 # Permalinks
 permalink:        pretty
@@ -9,7 +10,7 @@ permalink:        pretty
 # Setup
 title:            Sonny
 tagline:          'Creative Engineering'
-description:      'Petroleum & Software engineering'
+description:      'Software & Petroleum engineering'
 baseurl:          "/"
 url: 			  "http://sonny-qa.github.io"
 disqus: 		  "sonny-qa"

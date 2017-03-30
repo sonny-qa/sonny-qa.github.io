@@ -6,3 +6,10 @@ comments: true
 test latex 
 
 $$ \LaTeX $$
+
+test code
+
+`​``python
+import numpy as np
+x = [d*2 for i in list]
+`​``
