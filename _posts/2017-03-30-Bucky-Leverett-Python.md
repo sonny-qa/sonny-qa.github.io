@@ -9,7 +9,6 @@ $$ \LaTeX $$
 
 test code
 
-`​`` html
-import numpy as np;
-x = [d*2 for i in list];
-`​``
+```js
+var s = 'Hi';
+```
