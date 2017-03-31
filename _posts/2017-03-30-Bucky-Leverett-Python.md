@@ -3,7 +3,7 @@ layout: post
 title: Buckley Leverett analysis in Python
 comments: true
 ---
-I thought it would be interesting to write some functions to perform a Buckley-Leverett analysis using python and matplotlib. 
+<p> I thought it would be interesting to write some functions to perform a Buckley-Leverett analysis using python and matplotlib. </p>
 
 The Buckley-Leverett partial differential equation is:
 
@@ -36,7 +36,7 @@ $$ f_w = \frac{1}{1+\frac{k_ro}{\mu_o}\frac{mu_w}{k_rw}} $$
 
 we can plot this, along with it's derivative $$ \frac{df_w}{dS_w} $$ calculated numerically:
 
-![fracflow ]({{ site.baseurl }}assets/fig1.png)
+![fracflow ]({{ site.baseurl }}assets/fig1.png){: .center-image }
 
 ```py
 import numpy as np;
