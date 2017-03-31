@@ -3,11 +3,14 @@ layout: post
 title: Buckley Leverett analysis in Python
 comments: true
 ---
+I thought it would be interesting to write some functions to perform a Buckley-Leverett analysis using python and matplotlib. 
+
 The Buckley-Leverett partial differential equation is:
 
 $$ -\frac {df_w}{dS_w} \frac{\partial S_w}{\partial x} = \frac {A\phi}{q}\frac{\partial S_w}{\partial t} $$
 
 As $$ S_w(x,t) $$ we can write the total derivative as:
+
 $$ dS_w = \frac{\partial S_w}{\partial x}dx + \frac{\partial S_w}{\partial t}dt $$
 
 and, given that the fluid front is of constant saturation in the analysis, we can say: 
@@ -21,10 +24,19 @@ $$ \frac{dx}{dt} = \frac{q}{A\phi}\frac{df_w}{dS_w} $$
 
 Integration of both sides over time $$ t=0 $$ to $$ t=t $$:
 
+\int_{t=0} ^{t=t} \frac{dx}{dt}dt = \int_{t=0} ^{t=t}\frac{q}{A\phi}\frac{df_w}{dS_w}dt
 
+gives an expression for the position of the fluid front $$ x_f $$ at time $$ t $$:
 
+$$ x_f = \frac{q t}{A \phi}(\frac{df_w}{S_w})_f $$
 
-test code
+As we know that the fractional flow in the simple case of horizontal flow can be calculated as:
+
+$$ f_w = \frac{1}{1+\frac{k_ro}{\mu_o}\frac{mu_w}{k_rw}}
+
+we can plot this, along with it's derivative $$ \frac{df_w}{dS_w} $$ calculated numerically:
+
+![fracflow ]({{ site.baseurl }}assets/fig1.pdf)
 
 ```py
 import numpy as np;
