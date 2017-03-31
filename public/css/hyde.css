@@ -56,6 +56,12 @@ html {
   font-size: 2.2rem;
 }
 
+.center-image
+{
+    margin: 0 auto;
+    display: block;
+}
+
 
 .sidebar {
   text-align: center;
