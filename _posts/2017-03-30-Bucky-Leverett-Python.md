@@ -34,7 +34,7 @@ $$ x_f = \frac{q t}{A \phi}(\frac{df_w}{dS_w})_f $$
 
 As we know that the fractional flow in the simple case of horizontal flow can be calculated as:
 
-$$ f_w = \frac{1}{1+\frac{k_ro}{\mu_o}\frac{mu_w}{k_rw}} $$
+$$ f_w = \frac{1}{1+\frac{k_{ro}}{\mu_o}\frac{\mu_w}{k_{rw}}} $$
 
 we can plot this, along with it's derivative $$ \frac{df_w}{dS_w} $$ calculated numerically:
 
@@ -50,13 +50,12 @@ The curve suggests there exists two saturation solutions at each distance step, 
 ![sat-dist]({{site.baseurl}}assets/fig4.png){: .center-image }
 
 * $$ S_{w i} $$ represents the initial water saturation, where the shock front has not yet reached
-* $$ S_{w front} $$ represents the water saturation at the shock front
-* $$ S_{w irr} $$ represents the water saturation behind the shock front, after the saturation front has swept through, this location is left at the irreducable (or connate) water saturation. 
+* $$ S_{w \ shock} $$ represents the water saturation at the shock front
+* $$ 1-S_{or} $$ represents the water saturation behind the shock front, after the saturation front has swept through, this location is left at the residual oil saturation, $$ S_{or} $$ . 
 
 ### The code 
 
 The Buckley-Leverett class contains the relevant attributes for each instance, including the permeabiliy end points which can be used to generate the relative permeability curves using Corey type relationships.
-
 
 
 ```py
@@ -86,3 +85,36 @@ class BuckleyLev():
             "x-area":30
         }
 ```
+
+Using the these instance attributes we can then add methods to the class for calculating the fractional flow:
+
+```py
+def fractional_flow(self,sw):
+    #returns the fractional flow
+    
+    return 1./(1.+((self.k_rn(sw)/self.k_rw(sw))*(self.params["viscosity_w"]/self.params["viscosity_o"])))
+
+BuckleyLev.fractional_flow = fractional_flow
+```
+
+and for calculating the derivative numerically a finite difference approximation:
+
+```py
+def fractional_flow_deriv(self,sw):
+    #calculate derivative of fractional flow - dFw/dSw - Vsh
+    
+    f_deriv = (self.fractional_flow(sw+0.0001) - self.fractional_flow(sw))/0.0001
+    
+    return f_deriv
+
+BuckleyLev.fractional_flow_deriv = fractional_flow_deriv
+```
+The full code is available here
+
+By defining the attirbutes in this way, we can also visualise at the effects of evaluating the position of the shock as it progresses at different time steps, as follows:
+
+![fracflow ]({{ site.baseurl }}assets/fig5.png){: .center-image }
+
+Another interesting property is the actual proerties of the fluids involved in the displacement. The mobility ratio is defined as $$ \frac{k_{ro}}{\mu_o} $$. For a higher viscosity oil, the mobility ratio is lower. We can see the effects of this in the below figure - a more viscous oil means the water brekthrough occurs earlier. 
+
+![fracflow ]({{ site.baseurl }}assets/fig7.png){: .center-image }
