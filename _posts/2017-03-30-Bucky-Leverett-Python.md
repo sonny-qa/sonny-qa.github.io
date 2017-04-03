@@ -38,6 +38,9 @@ we can plot this, along with it's derivative $$ \frac{df_w}{dS_w} $$ calculated 
 
 ![fracflow ]({{ site.baseurl }}assets/fig1.png){: .center-image }
 
+To determine the water saturation at the shock front, we can construct chords starting at the connate water saturation, working our way up the fractional flow curve until we find the maximum gradient - this point gives us the shock saturation. In this case, $$ S_w = 0.81 $$:
+![satfront ]({{ site.baseurl }}assets/fig2.png){: .center-image }
+
 ```py
 import numpy as np;
 ```

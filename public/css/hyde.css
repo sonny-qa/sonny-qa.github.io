@@ -41,10 +41,13 @@ html {
 }
 @media (min-width: 58em) {
   html {
-    font-size: 20px;
+    font-size: 16px;
   }
 }
 
+.MathJax {
+font-size: 1.3em !important;
+}
 
 /*
  * Sidebar
@@ -69,6 +72,9 @@ html {
   color: rgba(255,255,255,.5);
   background-color: #202020;
 }
+
+
+
 @media (min-width: 38em) {
   .sidebar {
     position: fixed;
@@ -82,7 +88,8 @@ html {
 
 /* Sidebar links */
 .sidebar a {
-  color: #fff;
+  color: rgba(240, 240, 240, 0.87);
+  text-decoration: none;
 }
 
 
@@ -101,11 +108,16 @@ html {
 }
 .sidebar-nav-item {
   display: block;
-  line-height: 1.00;
+  line-height: 1.20;
+  text-align:left;
 }
+
+
+
+
 a.sidebar-nav-item:hover,
 a.sidebar-nav-item:focus {
-  text-decoration: underline;
+  text-decoration: none;
 }
 .sidebar-nav-item.active {
   font-weight: bold;
