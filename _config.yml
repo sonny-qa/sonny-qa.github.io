@@ -6,6 +6,15 @@ kramdown:
   input: GFM
   hard_wrap: false
 
+
+#kramdown:
+ # input: GFM
+  #hard_wrap: false
+
+  #extensions: fenced_code_blocks	
+
+
+
 # Permalinks
 permalink:        pretty
 

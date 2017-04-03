@@ -3,7 +3,9 @@ layout: post
 title: Buckley Leverett analysis in Python
 comments: true
 ---
-<p> I thought it would be interesting to write some functions to perform a Buckley-Leverett analysis using python and matplotlib. </p>
+I thought it would be interesting to write some functions to perform a Buckley-Leverett analysis using python and matplotlib.
+
+### The theory 
 
 The Buckley-Leverett partial differential equation is:
 
@@ -28,7 +30,7 @@ $$ \int_{t=0} ^{t=t} \frac{dx}{dt}dt = \int_{t=0} ^{t=t}\frac{q}{A\phi}\frac{df_
 
 gives an expression for the position of the fluid front $$ x_f $$ at time $$ t $$:
 
-$$ x_f = \frac{q t}{A \phi}(\frac{df_w}{S_w})_f $$
+$$ x_f = \frac{q t}{A \phi}(\frac{df_w}{dS_w})_f $$
 
 As we know that the fractional flow in the simple case of horizontal flow can be calculated as:
 
@@ -41,6 +43,46 @@ we can plot this, along with it's derivative $$ \frac{df_w}{dS_w} $$ calculated 
 To determine the water saturation at the shock front, we can construct chords starting at the connate water saturation, working our way up the fractional flow curve until we find the maximum gradient - this point gives us the shock saturation. In this case, $$ S_w = 0.81 $$:
 ![satfront ]({{ site.baseurl }}assets/fig2.png){: .center-image }
 
+Then we can plot the saturation as a function of the position $$ x_f $$. 
+![sat-dist]({{site.baseurl}}assets/fig3.png){: .center-image }
+
+The curve suggests there exists two saturation solutions at each distance step, which is not physically possible. The shock front  saturation is a discontinuity, and this can be used to modify the plot above to yield a profile of the saturation behind and in front of the saturation front.
+![sat-dist]({{site.baseurl}}assets/fig4.png){: .center-image }
+
+* $$ S_{w i} $$ represents the initial water saturation, where the shock front has not yet reached
+* $$ S_{w front} $$ represents the water saturation at the shock front
+* $$ S_{w irr} $$ represents the water saturation behind the shock front, after the saturation front has swept through, this location is left at the irreducable (or connate) water saturation. 
+
+### The code 
+
+The Buckley-Leverett class contains the relevant attributes for each instance, including the permeabiliy end points which can be used to generate the relative permeability curves using Corey type relationships.
+
+
+
 ```py
-import numpy as np;
+class BuckleyLev():
+    
+    def __init__(self):
+        self.params = {
+            #non wetting phase viscosity
+            "viscosity_o": 1.e-3,
+            #wetting phase viscosity
+            "viscosity_w": 0.5e-3,
+            #initial water sat
+            "initial_sw":0.4,
+            #irreducable water saturation, Swirr
+            "residual_w":0.1,
+            #residual oil saturation, Sor
+            "residual_o":0.1,
+            #water rel perm at water curve end point
+            "krwe":1,
+            #oil rel perm at oil curve end point
+            "kroe": 0.9,
+            #porosity
+            'poro':0.24,
+            #water injection rate units m3/hr
+            "inject_rate":200,
+            #cross sectional area units m2
+            "x-area":30
+        }
 ```
