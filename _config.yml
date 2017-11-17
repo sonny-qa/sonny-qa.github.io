@@ -23,7 +23,7 @@ permalink:        pretty
 title:            Sonny
 tagline:          'Creative Engineering'
 description:      'Software & Petroleum engineering'
-baseurl:          "/hyde"
+baseurl:          "/"
 url: 			  "http://sonny-qa.github.io"
 disqus: 		  "sonny-qa"
 
