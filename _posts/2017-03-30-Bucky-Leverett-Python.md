@@ -38,10 +38,10 @@ $$ f_w = \frac{1}{1+\frac{k_{ro}}{\mu_o}\frac{\mu_w}{k_{rw}}} $$
 
 we can plot this, along with it's derivative $$ \frac{df_w}{dS_w} $$ calculated numerically:
 
-![fracflow ]({{ site.baseurl }}assets/fig1.png){: .center-image }
+![fracflow ](/assets/fig1.png){: .center-image }
 
 To determine the water saturation at the shock front, we can construct chords starting at the connate water saturation, working our way up the fractional flow curve until we find the maximum gradient - this point gives us the shock saturation. In this case, $$ S_w = 0.81 $$:
-![satfront ]({{ site.baseurl }}assets/fig2.png){: .center-image }
+![satfront ](/assets/fig2.png){: .center-image }
 
 Then we can plot the saturation as a function of the position $$ x_f $$. 
 ![sat-dist]({{site.baseurl}}assets/fig3.png){: .center-image }
@@ -113,8 +113,8 @@ The full code is available here
 
 By defining the attirbutes in this way, we can also visualise at the effects of evaluating the position of the shock as it progresses at different time steps, as follows:
 
-![fracflow ]({{ site.baseurl }}assets/fig5.png){: .center-image }
+![fracflow ](/assets/fig5.png){: .center-image }
 
 Another interesting property is the actual proerties of the fluids involved in the displacement. The mobility ratio is defined as $$ \frac{k_{ro}}{\mu_o} $$. For a higher viscosity oil, the mobility ratio is lower. We can see the effects of this in the below figure - a more viscous oil means the water brekthrough occurs earlier. 
 
-![fracflow ]({{ site.baseurl }}assets/fig7.png){: .center-image }
+![fracflow ](/assets/fig7.png){: .center-image }
