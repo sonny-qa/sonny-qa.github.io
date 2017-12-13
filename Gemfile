@@ -3,3 +3,4 @@ gem "github-pages", group: :jekyll_pluggins
 gem "jekyll-paginate"
 gem "jekyll-gist"
 gem "jekyll-assets", "0.14.0"
+gem "rouge", "1.10"
