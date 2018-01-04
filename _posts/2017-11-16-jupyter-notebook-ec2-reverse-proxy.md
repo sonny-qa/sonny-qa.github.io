@@ -2,6 +2,7 @@
 layout: post
 title: How to run Jupyter notebooks on AWS with a reverse proxy
 comments: true
+description: How to setup an nginx reverse proxy server on AWS EC2 for python jupyter notebooks. This can help avoid problems connecting to a notebook when accessing from behind a firewall. 
 ---
 I needed to host a Python Jupyter Notebook remotely and then use this at work to do some data analysis with python. The problem was that the company firewall filtering was blocking ports stopping me accesssing the "bare" ubuntu instance running Jupyter.
 
@@ -149,3 +150,5 @@ The part of the last line `/home/ubuntu/anaconda3/bin/jupyter ` should be the ou
 Now, if you shutdown and restart your instance, your Jupyter notebook server should have automatically restarted and be ready for you when you hit the `\notebook` URL. 
 
 Hope thats helpful!
+
+
