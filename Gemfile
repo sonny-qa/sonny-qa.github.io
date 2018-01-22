@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 gem  "json" , '1.8.5' 
-gem "yajl-ruby" , "1.1.0"
+gem 'yajl-ruby', '~> 1.2', '>= 1.2.1'
 gem "github-pages", group: :jekyll_pluggins
 gem "jekyll-paginate"
 gem "jekyll-gist"
