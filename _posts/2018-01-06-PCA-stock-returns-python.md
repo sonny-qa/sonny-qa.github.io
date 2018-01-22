@@ -62,7 +62,7 @@ As the stocks data are actually market caps and the countries and sector data ar
 
 So, instead, we can calculate the log return at time t, $$R_{t}$$ defined as:
 
-$$R_{t} = \log{\frac{(P_{t-1}-P_{t})}{P_{t}}}$$
+$$R_{t} = \log{\frac{(P_{t}-P_{t-1})}{P_{t-1}}}$$
 
 
 ### Merging the data
@@ -189,6 +189,8 @@ Finally, the dataframe containing correlation metrics for all pairs is sorted in
 
 ![ubuntu ](/assets/table-pca.png){:  .center-image width="350px" }
 
-The top correlations listed in the above table are broadly consistent with the manual examples supplied and the results of the correlation heatmap produced in section 5. 
+The top correlations listed in the above table are broadly consistent with the results of the correlation heatmap produced in section 5. 
 
-This analysis of the loadings plot derived from PCA provides a more quantitative method of ranking the strength of the influence of the indexes on the stocks, without having to inspect each time series manually, or rely on a qualitative heatmap.
+This analysis of the loadings plot, derived from the analysis of the last few principal components, provides a more quantitative method of ranking correlated stocks, without having to inspect each time series manually, or rely on a qualitative heatmap.
+
+You can find the full code for this project <a href="https://github.com/sonny-qa/reverse-PCA/blob/master/analysis-3.ipynb">here</a>
