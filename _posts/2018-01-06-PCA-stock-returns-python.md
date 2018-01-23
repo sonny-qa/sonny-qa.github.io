@@ -2,7 +2,7 @@
 layout: post
 title: Using PCA to identify correlated stocks in Python
 comments: true
-description: Using Principle Component Analysis (PCA) to identify correlations in time series market returns stocks data
+description: Using Principle Component Analysis (PCA) to identify correlations in  daily returns time series data, for stocks and indicies.
 ---
 
 ## Overview
