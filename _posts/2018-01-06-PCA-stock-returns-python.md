@@ -2,16 +2,30 @@
 layout: post
 title: Using PCA to identify correlated stocks in Python
 comments: true
-description: Using Principle Component Analysis to identify correlations in time series market returns data
+description: Using Principle Component Analysis (PCA) to identify correlations in time series market returns stocks data
 ---
 
 ## Overview
 
-Principal component analysis is a well known technique typically used on high dimensional datasets, to represent variablity in a reduced number of characteristic dimensions, known as the principal components. Usually, we are interested in the top few principal components, when sorted in terms of explained variance of the dataset. Plotting the data points in this reduced dimensional space, may allow us to identify specific clusters or groupings which would not be identifable in higher dimensional space.
+Principal component analysis is a well known technique typically used on high dimensional datasets, to represent variablity in a reduced number of characteristic dimensions, known as the principal components. 
 
-## A different use
+In this post, I will show how PCA can be used *in reverse* to quantitatively identify correlated time series. We will compare this will a more visually appealing correlation heatmap to validate the approach. 
 
-However, recently I came across this <a href="https://arxiv.org/pdf/1512.03537.pdf">paper</a>, which shows that, the principal components representing a smaller proportion of the data variance, may in fact also hold useful insights. 
+### The plan:
+
+1. Clean and prepare the data
+2. Check for stationarity
+3. Generate qualitative correlation matrix
+4. Perform PCA
+5. Generate loadings plots
+6. Quantitatively identify and rank strongest correlated stocks
+
+
+* * *
+
+## Using PCA in reverse
+
+This approach is inspired by this <a href="https://arxiv.org/pdf/1512.03537.pdf">paper</a>, which shows that, the often overlooked 'smaller' principal components representing a smaller proportion of the data variance, may hold useful insights. 
 
 The authors suggest that the principal components, may actually be broadly divided into three classes:
 
@@ -93,7 +107,7 @@ The `adfuller` method can be used from the `statsmodels` library, and run on one
 
 <b>2. Inspection of the distribution</b>
 
-We can also plot the distribution of the returns for a selected series. If this distribution is approximately Gaussian then the data is likely to be stationary. 
+We can also plot the distribution of the returns for a selected series. If this distribution is approximately Gaussian then the data is likely to be stationary. Below, three randomly selected returns series are plotted - the results look fairly Gaussian. 
 
 ![ubuntu ](/assets/returns-dist.png){: .center-image }
 
@@ -189,8 +203,10 @@ Finally, the dataframe containing correlation metrics for all pairs is sorted in
 
 ![ubuntu ](/assets/table-pca.png){:  .center-image width="350px" }
 
-The top correlations listed in the above table are broadly consistent with the results of the correlation heatmap produced in section 5. 
+The top correlations listed in the above table are consistent with the results of the correlation heatmap produced earlier. 
 
-This analysis of the loadings plot, derived from the analysis of the last few principal components, provides a more quantitative method of ranking correlated stocks, without having to inspect each time series manually, or rely on a qualitative heatmap.
+This analysis of the loadings plot, derived from the analysis of the last few principal components, provides a more quantitative method of ranking correlated stocks, without having to inspect each time series manually, or rely on a qualitative heatmap of overall correlations. It would be cool to apply this analysis in a 'sliding window' approach to evaluate correlations within different time horizons.
+
+Hope you found it interesting!
 
 You can find the full code for this project <a href="https://github.com/sonny-qa/reverse-PCA/blob/master/analysis-3.ipynb">here</a>
