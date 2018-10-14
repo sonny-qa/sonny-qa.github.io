@@ -25,11 +25,11 @@ In this post, I will show how PCA can be used *in reverse* to quantitatively ide
 
 ## Using PCA in reverse
 
-This approach is inspired by this <a href="https://arxiv.org/pdf/1512.03537.pdf">paper</a>, which shows that, the often overlooked 'smaller' principal components representing a smaller proportion of the data variance, may hold useful insights. 
+This approach is inspired by this <a href="https://arxiv.org/pdf/1512.03537.pdf">paper</a>, which shows that the often overlooked 'smaller' principal components representing a smaller proportion of the data variance may actually hold useful insights. 
 
-The authors suggest that the principal components, may actually be broadly divided into three classes:
+The authors suggest that the principal components may be broadly divided into three classes:
 
-- The top few components global variation within the dataset.
+- The top few components which represent global variation within the dataset.
 - A set of components representing the syncronised variation between certain members of the dataset.
 - Components representing random fluctuations within the dataset.
 
