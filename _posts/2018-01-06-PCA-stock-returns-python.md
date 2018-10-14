@@ -9,7 +9,7 @@ description: Using Principle Component Analysis (PCA) to identify correlations i
 
 Principal component analysis is a well known technique typically used on high dimensional datasets, to represent variablity in a reduced number of characteristic dimensions, known as the principal components. 
 
-In this post, I will show how PCA can be used *in reverse* to quantitatively identify correlated time series. We will compare this will a more visually appealing correlation heatmap to validate the approach. 
+In this post, I will show how PCA can be used *in reverse* to quantitatively identify correlated time series. We will compare this with a more visually appealing correlation heatmap to validate the approach. 
 
 ### The plan:
 
